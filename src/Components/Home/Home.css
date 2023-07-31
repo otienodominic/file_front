@@ -1,0 +1,42 @@
+.cover {
+    display: inline-block;
+    padding: 10px;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    margin-top: 23px;
+    border-radius: 15px;  
+    
+}
+h1 {   
+   width: 100%; 
+   color: rgb(2, 2, 68);
+}
+h2 {
+   align-self: center;
+   color: inherit; 
+   width: 50%;
+   margin-left: 25%;
+ }
+ /* .info {
+    padding: 2em;
+    border-color: gray;
+    border: 1px solid;
+    border-radius: 5px;
+    height: 10px;
+    margin-left: 40%;
+    margin-bottom: 50px;
+    color: blue;
+ } */
+
+ .btn {
+   display: block;
+   background-color: var(--primary-color);
+   color: var(--white);
+   text-align: center;    
+   padding: 0.8rem 1.4rem;
+   font-size: 1rem;
+   font-weight: 500;
+   border-radius: 12px;
+
+ }
