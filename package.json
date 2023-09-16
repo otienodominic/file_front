@@ -1,5 +1,5 @@
 {
-  "homepage": "https://otienodominic.github.io/file_front",
+  "homepage": "http://otienodominic.github.io/file_front",
   "name": "file_front",
   "proxy": "https://filebackend-3e82d3066410.herokuapp.com/",
   "version": "0.1.0",
