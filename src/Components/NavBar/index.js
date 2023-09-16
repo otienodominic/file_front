@@ -42,9 +42,8 @@ export function NavBar() {
             {user && <i class='bx bxs-log-in-circle bx-sm bx-border bx-fade-right-hover' onClick={logout} ></i>} 
           </div>
           <div>
-            {!user && <button className="btn btn-primary" id='login' onClick={()=> {navigate('/login')}}>Login</button>} 
+            {!user ? <button className="btn btn-primary" id='login' onClick={()=> {navigate('/login')}}>Login</button> : <button className="btn btn-primary" id='login' onClick={logout}>Logout</button>} 
           </div>
-          
                   
         </div>
       </div>

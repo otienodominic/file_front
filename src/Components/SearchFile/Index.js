@@ -29,9 +29,7 @@ export const SearchFile = () => {
             } catch (error) {
                 setError(error)
             }
-
-    }
-    
+    }   
 
     useEffect(()=> {
         fetchSearch()
