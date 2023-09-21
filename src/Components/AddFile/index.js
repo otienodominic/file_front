@@ -25,7 +25,7 @@ export const AddFile = () => {
             appointmentDate: appointRef.current.value
         }
         try {
-            await fetch('https://filebackend-3e82d3066410.herokuapp.com/api/files/create', {
+            await fetch('/api/files/create', {
                 method: 'POST',
                 body: JSON.stringify(formData),
                 headers: {'Content-Type' : 'application/json'}

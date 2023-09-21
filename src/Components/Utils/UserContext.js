@@ -14,7 +14,7 @@ export const UserProvider = ({children}) => {
     // })
     const [user, setUser] = useState(null)
     const logout = async() => {
-        await fetch('https://filebackend-3e82d3066410.herokuapp.com/api/auth/logout')
+        await fetch('/api/auth/logout')
         // localStorage.removeItem('userProfile')
         setUser(null)
         navigate('/')

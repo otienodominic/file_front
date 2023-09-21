@@ -4,9 +4,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
-// import "bootstrap/dist/css/bootstrap.min.css";
-{/* <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'></link> */}
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   

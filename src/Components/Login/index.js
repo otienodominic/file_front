@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useContext } from 'react'
+import { useRef, useContext } from 'react'
 import './Login.css'
 import { useNavigate } from 'react-router-dom'
 import UserContext from '../Utils/UserContext'
@@ -23,10 +23,13 @@ export function Login() {
         
     
         try {
-            let response = await fetch('https://filebackend-3e82d3066410.herokuapp.com/api/auth/login', {
+            let response = await fetch('/api/auth/login', {
                 method: 'POST',
                 body: JSON.stringify(person),
-                headers: { 'Content-Type': 'application/json' }
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                  }
             })
             let ans = await response.json()               
             // localStorage.setItem('userProfile', JSON.stringify(ans))      
