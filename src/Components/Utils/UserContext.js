@@ -5,16 +5,17 @@ const UserContext = createContext(null)
 
 export const UserProvider = ({children}) => {
     const navigate = useNavigate()
-    const [user, setUser] = useState(()=>{
-        let userProfile = localStorage.getItem('userProfile')
-        if(userProfile){
-            return JSON.parse(userProfile)
-        }
-        return null
-    })
+    // const [user, setUser] = useState(()=>{
+    //     let userProfile = localStorage.getItem('userProfile')
+    //     if(userProfile){
+    //         return JSON.parse(userProfile)
+    //     }
+    //     return null
+    // })
+    const [user, setUser] = useState(null)
     const logout = async() => {
-        await fetch('/api/auth/logout')
-        localStorage.removeItem('userProfile')
+        await fetch('https://filebackend-3e82d3066410.herokuapp.com/api/auth/logout')
+        // localStorage.removeItem('userProfile')
         setUser(null)
         navigate('/')
     }
@@ -30,7 +31,7 @@ export const UserProvider = ({children}) => {
     // }
 
     return(
-        <UserContext.Provider value={[user, setUser, logout]}>
+        <UserContext.Provider value={{user, setUser, logout}}>
             {children}
         </UserContext.Provider>
     )

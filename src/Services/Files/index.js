@@ -1,6 +1,6 @@
 export const getAllFiles = async() => {
     try {
-        const response = await fetch('/api/files')
+        const response = await fetch('https://filebackend-3e82d3066410.herokuapp.com/api/files')
         return response.json()
     } catch {
         throw new Error('Could not fetch files')
@@ -8,7 +8,7 @@ export const getAllFiles = async() => {
 }
 
 export const getFile = async(id) => {
-    let response = await fetch(`/api/files/${id}`)
+    let response = await fetch(`https://filebackend-3e82d3066410.herokuapp.com/api/files/${id}`)
     let data = await response.json()
     return data
 }
@@ -22,7 +22,7 @@ export const createFile = async(formData) => {
 }
 
 export const editFile = async({formData, id}) => {
-    let response = await fetch(`/api/files/edit/${id}`, {
+    let response = await fetch(`https://filebackend-3e82d3066410.herokuapp.com/api/files/edit/${id}`, {
         method: 'PUT',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(formData)
@@ -32,7 +32,7 @@ export const editFile = async({formData, id}) => {
 }
 
 export const deleteFile = async(id) => {
-   return await fetch(`/api/files/delete/${id}`, {
+   return await fetch(`https://filebackend-3e82d3066410.herokuapp.com/api/files/delete/${id}`, {
         method: 'DELETE'
     })
     

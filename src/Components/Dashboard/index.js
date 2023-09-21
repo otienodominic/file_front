@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 import './dashboard.css'
 // https://www.youtube.com/watch?v=MY6ZZIn93V8  Implemetn a search
 export function Dashboard() {
-    const [user] = useContext(UserContext)   
+    const {user} = useContext(UserContext)   
    
     
     return(

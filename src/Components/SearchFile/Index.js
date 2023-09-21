@@ -18,7 +18,7 @@ export const SearchFile = () => {
         
             try {
                 setLoading(true)
-                let response = await fetch('/api/files/search', {
+                let response = await fetch('https://filebackend-3e82d3066410.herokuapp.com/api/files/search', {
                     method: 'POST',
                     body: JSON.stringify(body),
                     headers: {'Content-Type' : 'application/json'}

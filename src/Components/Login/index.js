@@ -7,33 +7,37 @@ import UserContext from '../Utils/UserContext'
 
 export function Login() {    
     const navigate = useNavigate()
-    const [user, setUser] = useContext(UserContext)
+    const {user, setUser} = useContext(UserContext)
     
     const emailRef = useRef()
     const passwordRef = useRef()
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-        let person = {
+
+        const person = {
             email: emailRef.current.value,
             password: passwordRef.current.value
         }
+        
+        
+    
         try {
-            let response = await fetch('/api/auth/login', {
+            let response = await fetch('https://filebackend-3e82d3066410.herokuapp.com/api/auth/login', {
                 method: 'POST',
                 body: JSON.stringify(person),
                 headers: { 'Content-Type': 'application/json' }
             })
             let ans = await response.json()               
-            localStorage.setItem('userProfile', JSON.stringify(ans))      
+            // localStorage.setItem('userProfile', JSON.stringify(ans))      
             setUser(ans) 
             navigate('/files')          
             
         }catch(error){
             alert(error)
-        }
-    
-   }  
+            
+        }    
+   }    
     return(
         <div className='holder'>
             <form className='form' onSubmit={handleSubmit}>
