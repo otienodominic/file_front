@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom"
 import dayjs from "dayjs"
 import { calculateAge } from "../Utils/CalculateAge"
 export const SearchFile = () => {
+    let api = process.env.REACT_APP_API_URL 
     const [files, setFiles] = useState(null)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)   
@@ -18,7 +19,7 @@ export const SearchFile = () => {
         
             try {
                 setLoading(true)
-                let response = await fetch('/api/files/search', {
+                let response = await fetch(api + '/api/files/search', {
                     method: 'POST',
                     body: JSON.stringify(body),
                     headers: {'Content-Type' : 'application/json'}

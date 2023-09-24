@@ -1,6 +1,5 @@
 {
-  "name": "file_front",  
-  "proxy": "https://filebackend-3e82d3066410.herokuapp.com",
+  "name": "file_front",    
   "version": "0.1.0",
   "private": true,
   "dependencies": {

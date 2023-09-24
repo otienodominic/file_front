@@ -4,6 +4,7 @@ import { useRef } from 'react'
 
 
 export const AddFile = () => {
+    let api = process.env.REACT_APP_API_URL 
     const navigate = useNavigate()
     const numbRef = useRef()
     const nameRef = useRef()
@@ -25,7 +26,7 @@ export const AddFile = () => {
             appointmentDate: appointRef.current.value
         }
         try {
-            await fetch('/api/files/create', {
+            await fetch(api + '/api/files/create', {
                 method: 'POST',
                 body: JSON.stringify(formData),
                 headers: {'Content-Type' : 'application/json'}

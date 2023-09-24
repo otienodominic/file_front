@@ -5,7 +5,8 @@ import UserContext from '../Utils/UserContext'
 
 
 
-export function Login() {    
+export function Login() { 
+    let api = process.env.REACT_APP_API_URL   
     const navigate = useNavigate()
     const {user, setUser} = useContext(UserContext)
     
@@ -23,7 +24,7 @@ export function Login() {
         
     
         try {
-            let response = await fetch('/api/auth/login', {
+            let response = await fetch(api + '/api/auth/login', {
                 method: 'POST',
                 body: JSON.stringify(person),
                 headers: {
