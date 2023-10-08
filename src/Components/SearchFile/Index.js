@@ -15,8 +15,9 @@ export const SearchFile = () => {
 
     const fetchSearch = async(e) => {  
         if(e && e.preventDefault()  ) {e.preventDefault()}   
-        const body = {message: formRef.current.value}
-        
+        // const body = {message: formRef.current.value}
+        const body = {number: formRef.current.value}
+        console.log(body)
             try {
                 setLoading(true)
                 let response = await fetch(api + '/api/files/search', {
@@ -32,14 +33,14 @@ export const SearchFile = () => {
             }
     }   
 
-    useEffect(()=> {
-        fetchSearch()
-    },[])
+    // useEffect(()=> {
+    //     fetchSearch()
+    // },[])
 
     return (
         <div className="con">
             <h1>Create/Search Patient File</h1>
-            <p>Search Patient file by name or patient Number</p>
+            <p>Search Patient file by patient Number only</p>
             <div >
                 <form className="search-button" onSubmit={fetchSearch}>  
                     <div className="form-div">
